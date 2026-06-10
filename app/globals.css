@@ -155,8 +155,33 @@ body {
   box-shadow: 0 0 18px rgba(126, 255, 202, 0.16);
 }
 
-@media (pointer: coarse), (max-width: 767px) {
-  .crosshair-cursor {
-    display: none;
+@media (max-width: 767px) {
+  .crosshair-cursor__line {
+    background: rgba(126, 255, 202, 0.32);
+  }
+
+  .crosshair-cursor__mark {
+    width: 34px;
+    height: 34px;
+    transform: translate(
+      calc(var(--cursor-x, -100px) - 17px),
+      calc(var(--cursor-y, -100px) - 17px)
+    );
+  }
+
+  .crosshair-cursor__mark::before {
+    width: 34px;
+  }
+
+  .crosshair-cursor__mark::after {
+    height: 34px;
+  }
+
+  .crosshair-cursor__label {
+    font-size: 9px;
+    transform: translate(
+      calc(var(--cursor-x, -100px) + 12px),
+      calc(var(--cursor-y, -100px) + 14px)
+    );
   }
 }

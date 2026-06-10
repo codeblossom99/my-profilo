@@ -58,7 +58,11 @@ export default function ColumnPortal() {
 
       <div className="relative grid min-h-screen grid-rows-[auto_1fr_auto] px-5 py-5 sm:px-8 lg:px-10">
         <header className="flex items-center justify-between border-b border-[#7effca]/20 pb-4 font-mono text-xs uppercase tracking-[0.22em]">
-          <Link href="/" className="text-[#7effca] transition hover:text-[#eef5ed]">
+          <Link
+            href="/"
+            data-cursor-label="home"
+            className="text-[#7effca] transition hover:text-[#eef5ed]"
+          >
             TING-EN CHEN
           </Link>
           <div className="hidden items-center gap-4 text-[#98a39a] sm:flex">
@@ -94,6 +98,7 @@ export default function ColumnPortal() {
                 <Link
                   key={column.code}
                   href={column.href}
+                  data-cursor-label={column.label.toLowerCase()}
                   onMouseEnter={() => setActiveIndex(index)}
                   onFocus={() => setActiveIndex(index)}
                   className={`group relative overflow-hidden border p-3 transition duration-300 sm:p-4 ${
