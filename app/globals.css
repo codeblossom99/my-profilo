@@ -55,7 +55,8 @@ body {
 
 .crosshair-cursor__line {
   position: absolute;
-  background: rgba(126, 255, 202, 0.22);
+  background: rgba(126, 255, 202, 0.42);
+  box-shadow: 0 0 12px rgba(126, 255, 202, 0.22);
   will-change: transform;
 }
 
@@ -79,11 +80,11 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  width: 28px;
-  height: 28px;
+  width: 42px;
+  height: 42px;
   transform: translate(
-    calc(var(--cursor-x, -100px) - 14px),
-    calc(var(--cursor-y, -100px) - 14px)
+    calc(var(--cursor-x, -100px) - 21px),
+    calc(var(--cursor-y, -100px) - 21px)
   );
   transition: height 180ms ease, width 180ms ease;
   will-change: transform, width, height;
@@ -101,21 +102,21 @@ body {
 }
 
 .crosshair-cursor__mark::before {
-  width: 28px;
-  height: 1px;
+  width: 42px;
+  height: 2px;
 }
 
 .crosshair-cursor__mark::after {
-  width: 1px;
-  height: 28px;
+  width: 2px;
+  height: 42px;
 }
 
 .crosshair-cursor.is-targeting .crosshair-cursor__mark {
-  width: 52px;
-  height: 52px;
+  width: 68px;
+  height: 68px;
   transform: translate(
-    calc(var(--cursor-x, -100px) - 26px),
-    calc(var(--cursor-y, -100px) - 26px)
+    calc(var(--cursor-x, -100px) - 34px),
+    calc(var(--cursor-y, -100px) - 34px)
   );
   background:
     linear-gradient(rgba(126, 255, 202, 0.95), rgba(126, 255, 202, 0.95)) 0 0 / 7px 7px no-repeat,
@@ -138,16 +139,20 @@ body {
     calc(var(--cursor-y, -100px) + 18px)
   );
   border: 1px solid rgba(126, 255, 202, 0.24);
-  background: rgba(5, 8, 11, 0.72);
+  background: rgba(5, 8, 11, 0.86);
   color: rgba(126, 255, 202, 0.92);
   font-family: var(--font-geist-mono), monospace;
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.12em;
   line-height: 1;
   padding: 6px 7px;
   text-transform: uppercase;
   white-space: nowrap;
   will-change: transform;
+}
+
+.crosshair-cursor.has-signal .crosshair-cursor__label {
+  box-shadow: 0 0 18px rgba(126, 255, 202, 0.16);
 }
 
 @media (pointer: coarse), (max-width: 767px) {

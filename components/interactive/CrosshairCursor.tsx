@@ -16,8 +16,6 @@ export default function CrosshairCursor() {
   const [coords, setCoords] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    if (window.matchMedia("(pointer: coarse)").matches) return;
-
     const render = () => {
       const target = mouseRef.current;
       const rendered = renderedRef.current;
@@ -37,7 +35,7 @@ export default function CrosshairCursor() {
     const handleMove = (event: MouseEvent) => {
       mouseRef.current = { x: event.clientX, y: event.clientY };
       setCoords({ x: event.clientX, y: event.clientY });
-      rootRef.current?.classList.add("is-visible");
+      rootRef.current?.classList.add("is-visible", "has-signal");
     };
 
     const handleOver = (event: MouseEvent) => {
